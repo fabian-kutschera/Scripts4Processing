@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Ignore certain input output files
+input/*.nc
+input/*.h5
+output/*.nc
+output/*.h5
