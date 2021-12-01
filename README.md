@@ -4,7 +4,7 @@ Repository with useful scripts for SeisSol postprocessing.
 #### How to clone this repository including it's submodules?
 
 Use
-1. git clone --recurse-submodules https://github.com/chaconinc/MainProject
+1. git clone --recurse-submodules https://github.com/fabian-kutschera/Script4Processing.git
 
 If you already cloned this repository but forgot `--recurse-submodules` use:
 1. git clone https://github.com/fabian-kutschera/Script4Processing.git
