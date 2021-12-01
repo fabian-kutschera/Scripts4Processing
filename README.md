@@ -1,7 +1,7 @@
 # Script4Processing
 Repository with useful scripts for SeisSol postprocessing.
 
-#### How to clone this repository including its submodules?
+### How to clone this repository including its submodules?
 
 Use
 1. git clone --recurse-submodules https://github.com/fabian-kutschera/Script4Processing.git
@@ -13,5 +13,8 @@ If you already cloned this repository but forgot `--recurse-submodules` use:
 
 Find more information on how to use submodules in the [documentation](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 
-#### Overview of scrips
-The focal_plot.m(link) script requires to add [MATLAB code for moment tensor plotting](https://github.com/djpugh/MTplot) to the MATLAB path. The necessary files are already contained within this repository (foldername) if cloned properly (see above).
+### Overview of scrips
+#### [focal_plot.m](./focal_plot.m)
+The `focal_plot.m` script requires to add [MATLAB code for moment tensor plotting](https://github.com/djpugh/MTplot) to the MATLAB path. The necessary files are already contained within this repository ([MTplot](./MTplot) if cloned properly (see above).
+
+#### [concatenate_EnF_t.py](./concatenate_EnF_t.py)
