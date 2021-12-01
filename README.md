@@ -1,7 +1,7 @@
 # Script4Processing
 Repository with useful scripts for SeisSol postprocessing.
 
-#### How to clone this repository including it's submodules?
+#### How to clone this repository including its submodules?
 
 Use
 1. git clone --recurse-submodules https://github.com/fabian-kutschera/Script4Processing.git
