@@ -1,6 +1,8 @@
 # Script4Processing
 Repository with useful scripts for SeisSol postprocessing.
 
+In order to run the scripts, open Spyder (.py), Jupyter-Notebook (.ipynb) or MATLAB (.m) from the main directory in which the README file resides.
+
 ### How to clone this repository including its submodules?
 
 Use
