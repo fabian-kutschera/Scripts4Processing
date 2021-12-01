@@ -15,6 +15,6 @@ Find more information on how to use submodules in the [documentation](https://gi
 
 ### Overview of scrips
 #### [focal_plot.m](./focal_plot.m)
-The `focal_plot.m` script requires to add [MATLAB code for moment tensor plotting](https://github.com/djpugh/MTplot) to the MATLAB path. The necessary files are already contained within this repository ([MTplot](./MTplot) if cloned properly (see above).
+The `focal_plot.m` script requires to add [MATLAB code for moment tensor plotting](https://github.com/djpugh/MTplot) to the MATLAB path. The necessary files are already contained within this repository (MTplot) if cloned properly (see above).
 
 #### [concatenate_EnF_t.py](./concatenate_EnF_t.py)
