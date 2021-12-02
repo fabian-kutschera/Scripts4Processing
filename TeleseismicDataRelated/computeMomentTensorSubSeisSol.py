@@ -242,7 +242,7 @@ MomentTensor = np.transpose(aMomentTensorRTP)
 
 
 nsources = isrc
-h5f = h5py.File('PointSourceFile_%d_%d.h5' %(args.NH[0],args.NZ[0]),'w')
+h5f = h5py.File('../output/PointSourceFile_%d_%d.h5' %(args.NH[0],args.NZ[0]),'w')
 h5f.create_dataset('NormalizedMomentRate', (nsources,ndt), dtype='d')
 h5f.create_dataset('xyz', (nsources,3), dtype='d')
 h5f.create_dataset('MomentTensor', (nsources,6), dtype='d')
