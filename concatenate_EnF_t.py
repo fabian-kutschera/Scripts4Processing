@@ -1,4 +1,3 @@
-
 ##
 # @file
 # This file is part of SeisSol.
@@ -41,11 +40,16 @@
 #     run concatenate_EnF_t.py /import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/complex_fault_geometry/Complex_Middle_M7.07/HFFtest --plot 
 #       Complex_West_M6.74
 #       Complex_East_M6.68
-#       
+# or
+# /import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/simple_fault_geometry/
+#   Simple_East_M7.341/HFFtest 
+#   Simple_Middle_M7.333/HFFtest
+#   Simple_West_M7.343/HFFtest
 # =============================================================================
 
 #header = 'DR complex West'
-header = 'DR complex East'
+header = 'DR simple West'
+# remember to adjust xlim 
 
 
 import glob
@@ -167,7 +171,9 @@ if args.display_plot:
    f, axarr = plt.subplots(2)
    axarr[0].plot(En_conc[:,0], En_conc[:,1])
    axarr[0].set_ylabel('Nm/s')
-   axarr[0].set_title('Seismic moment rate')
+   axarr[0].set_title('Seismic moment rate (Mw {:.2f})'.format(Mw))
+   axarr[0].set_xlim(0,100)
+   axarr[1].set_xlim(0,100)
    axarr[1].plot(En_conc[:,0], FricEn[:])
    axarr[1].set_ylabel('Joule')
    axarr[1].set_xlabel('time (s)')
@@ -175,17 +181,18 @@ if args.display_plot:
    f.tight_layout()
    f.suptitle('{} Mw {:.2f}'.format(header, Mw), x=0.5, y=1.05, fontweight='bold')
    #plt.show()
-   plt.savefig('/import/freenas-m-05-seissol/kutschera/HIWI/Scripts/TeleseismicDataRelated/output/MR_FR_Mw{}.png'.format(Mw), dpi=300)
+   plt.savefig('./output/MR_FR_{}_Mw{}.png'.format(header, Mw), dpi=300)
    
 # add zoomed figure here
 fig = plt.figure()
 plt.plot(En_conc[:,0], En_conc[:,1])
-plt.xlim(0,20)
+#plt.xlim(0,20) # Complex
+plt.xlim(0,40) # Simple
 plt.xlabel('time (s)')
 plt.ylabel('Nm/s')
 plt.grid()
-plt.title('Seismic moment rate Mw {:.2f}'.format(Mw))
-plt.savefig('/import/freenas-m-05-seissol/kutschera/HIWI/Scripts/TeleseismicDataRelated/output/MR_Mw{}.png'.format(Mw), dpi=300)
+plt.title('Seismic moment rate (Mw {:.2f})'.format(Mw))
+plt.savefig('./output/MR_{}_Mw{}.png'.format(header, Mw), dpi=300)
 
 dataset = pd.DataFrame({'time': En_conc[:, 0], 'moment': En_conc[:, 1]})
-dataset.to_csv("MR "+header+".csv")
+dataset.to_csv("./output/MR_{}_Mw{:.2f}.csv".format(header, Mw))
