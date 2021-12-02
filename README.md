@@ -6,10 +6,10 @@ In order to run the scripts, open Spyder (.py), Jupyter-Notebook (.ipynb) or MAT
 ### How to clone this repository including its submodules?
 
 Use
-1. git clone --recurse-submodules https://github.com/fabian-kutschera/Script4Processing.git
+1. git clone --recurse-submodules https://github.com/fabian-kutschera/Scripts4Processing.git
 
 If you already cloned this repository but forgot `--recurse-submodules` use:
-1. git clone https://github.com/fabian-kutschera/Script4Processing.git
+1. git clone https://github.com/fabian-kutschera/Scripts4Processing.git
 2. git submodule init
 3. git submodule update
 
