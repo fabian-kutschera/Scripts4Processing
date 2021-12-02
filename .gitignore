@@ -129,8 +129,6 @@ dmypy.json
 .pyre/
 
 # Ignore certain input output files
-input/*.nc
-input/*.h5
-output/*.nc
-output/*.h5
+input/*
+output/*
 token
