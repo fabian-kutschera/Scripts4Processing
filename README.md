@@ -24,7 +24,7 @@ This file is part of SeisSol. It is used to retrieve the Moment Magnitude Mw and
 #### [computeMomentTensorSubSeisSol.py](./TeleseismicDataRelated/computeMomentTensorSubSeisSol.py)
 As an alternative to the [concatenate_EnF_t.py](./concatenate_EnF_t.py) one can use the computeMomentTensorSubSeisSol.py script. It requires the fault xdmf output (e.g. *HFFtest-fault.xdmf*). However, please provide a 3D velocity model in order to have an accurate estimate of the Moment Rate etc.. Remember to set the following flags:
 - `--invertSls`: invert Slip in the strike direction due to SeisSol convention
-- `--NZ 1` and `--NH 1` to plot the beachball representation (point source)
+- `--NZ 1` and `--NH 1` to plot the beachball representation (point source) later on
 - `--asagiFile` or `--oneDvel` to include a 3D- or 1D-velocity model (3D is recommended)
 - `--proj` to project back to WGS84 from given projection string (e.g. *--proj '+proj=utm +zone=27'* or *--proj '+init=EPSG:32627'*
 
