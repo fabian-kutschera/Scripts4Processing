@@ -26,7 +26,8 @@ As an alternative to the [concatenate_EnF_t.py](./concatenate_EnF_t.py) one can 
 - `--invertSls`: invert Slip in the strike direction due to SeisSol convention
 - `--NZ 1` and `--NH 1` to plot the beachball representation (point source) later on
 - `--asagiFile` or `--oneDvel` to include a 3D- or 1D-velocity model (3D is recommended)
-- `--proj` to project back to WGS84 from given projection string (e.g. *--proj '+proj=utm +zone=27'* or *--proj '+init=EPSG:32627'*
+- `--proj` to project back to WGS84 from given projection string (e.g. *--proj '+proj=utm +zone=27'* or *--proj '+init=EPSG:32627'*)
+- `--outName` to append additional name to PointSourceFile***.h5 file (e.g. *--outName 'DR_complex_West'*)
 
 The computeMomentTensorSubSeisSol.py generates a Point***.h5 output file which can be processed with several other script (see below).
 
