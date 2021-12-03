@@ -20,8 +20,8 @@ import matplotlib.pyplot as plt
 labelSeisSol=['base scenario']
 for i,fn in enumerate(['base']):
    #fname = f'PointSourceFile_1_1_{fn}.h5'
-   #fname = f'PointSourceFile_20_2.h5'
-   fname = f'PointSourceFile_1_1.h5'
+   fname = f'./output/PointSourceFile_1_1_Simple_East_M7.341.h5'
+   #fname = f'PointSourceFile_1_1.h5'
    h5f = h5py.File(fname,'r')
    STF = h5f['NormalizedMomentRate'][:,:]
    aMomentTensor = h5f['MomentTensor'][:,:][0]
@@ -45,5 +45,5 @@ for i,fn in enumerate(['base']):
 # =============================================================================
 
    plt.plot(time, STF[0,:], label=labelSeisSol[i])# 'b'+ls[i], label=labelSeisSol[i])
-   plt.xlim(0,20)
+   plt.xlim(0,40)
    plt.grid()
