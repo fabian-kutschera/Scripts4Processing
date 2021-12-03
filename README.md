@@ -31,7 +31,7 @@ As an alternative to the [concatenate_EnF_t.py](./concatenate_EnF_t.py) one can 
 - `--proj` to project back to WGS84 from given projection string (e.g. *--proj '+proj=utm +zone=27'* or *--proj '+init=EPSG:32627'*)
 - `--outName` to append additional name to PointSourceFile***.h5 file (e.g. *--outName 'DR_complex_West'*)
 
-The computeMomentTensorSubSeisSol.py generates a Point***.h5 output file which can be processed with several other script (see below).
+The computeMomentTensorSubSeisSol.py generates a Point***.h5 output file which can be processed with several other scripts (see below).
 
 #### [MomentRate_fromPointSource_h5.py](./MomentRate_fromPointSource_h5.py)
 This script can be used after [computeMomentTensorSubSeisSol.py](./TeleseismicDataRelated/computeMomentTensorSubSeisSol.py) since it requires the *PointSourceFile.h5* output. It will generate a **Moment Rate plot** similar to [concatenate_EnF_t.py](./concatenate_EnF_t.py).
