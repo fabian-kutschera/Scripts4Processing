@@ -21,6 +21,8 @@ Find more information on how to use submodules in the [documentation](https://gi
 #### [concatenate_EnF_t.py](./concatenate_EnF_t.py)
 This file is part of SeisSol. It is used to retrieve the Moment Magnitude Mw and the Scalar Seismic Moment M0, as well as to plot the Seismic Moment Rate and Frictional Energy as a function of time. The script requires an **EnF_t** output (e.g. *HFFtest-EnF_t-00000.dat*) of SeisSol.
 
+Run from within Spyder via `run concatenate_EnF_t.py /import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/complex_fault_geometry/Complex_Middle_M7.07/HFFtest --plot`
+
 #### [computeMomentTensorSubSeisSol.py](./TeleseismicDataRelated/computeMomentTensorSubSeisSol.py)
 As an alternative to the [concatenate_EnF_t.py](./concatenate_EnF_t.py) one can use the computeMomentTensorSubSeisSol.py script. It requires the fault xdmf output (e.g. *HFFtest-fault.xdmf*). However, please provide a 3D velocity model in order to have an accurate estimate of the Moment Rate etc.. Remember to set the following flags:
 - `--invertSls`: invert Slip in the strike direction due to SeisSol convention
