@@ -30,6 +30,7 @@ parser.add_argument('--vH', nargs=2, metavar=('vhx','vhy'), default=([1,1]), hel
 parser.add_argument('--static', dest='static', action='store_true', help='static fault output (only 1 dt)')
 parser.add_argument('--invertSls', dest='invertSls', action='store_true', help='invert Sls (problem in normal definition)')
 parser.add_argument('--invertSld', dest='invertSld', action='store_true', help='invert Sld (problem in normal definition)')
+parser.add_argument('--outName', nargs=1, metavar=('outName'), default = False,  help='give name which will be appended to output file')
 
 args = parser.parse_args()
 
@@ -242,7 +243,11 @@ MomentTensor = np.transpose(aMomentTensorRTP)
 
 
 nsources = isrc
-h5f = h5py.File('../output/PointSourceFile_%d_%d.h5' %(args.NH[0],args.NZ[0]),'w')
+if args.outName:
+    #h5f = h5py.File('../output/PointSourceFile_{}_{}_{}.h5'.format(args.NH[0],args.NZ[0], args.outName), 'w')
+    h5f = h5py.File('../output/PointSourceFile_%d_%d_%s.h5' %(args.NH[0],args.NZ[0], args.outName[0]), 'w')
+else:
+    h5f = h5py.File('../output/PointSourceFile_%d_%d.h5' %(args.NH[0],args.NZ[0]),'w')
 h5f.create_dataset('NormalizedMomentRate', (nsources,ndt), dtype='d')
 h5f.create_dataset('xyz', (nsources,3), dtype='d')
 h5f.create_dataset('MomentTensor', (nsources,6), dtype='d')
