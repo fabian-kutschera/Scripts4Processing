@@ -1,10 +1,12 @@
 clear all
 close all
 
-addpath(genpath('/import/freenas-m-05-seissol/kutschera/HIWI/Scripts/TeleseismicDataRelated/MTplot'))
+addpath(genpath('./MTplot'))
 
-datadir=('/import/freenas-m-05-seissol/kutschera/HIWI/Scripts/TeleseismicDataRelated/');
+datadir=('./output/');
+
 fnames=dir([datadir '*.h5']);
+%fnames=dir([datadir 'PointSourceFile_1_1_Complex_West_M6.74.h5']);
 focal_info=zeros(length(fnames),6);
 for istn=1:length(fnames)
     hinfo=hdf5info([datadir fnames(istn).name]);
@@ -25,7 +27,9 @@ title(titlename,'Fontsize',18)
 set(gca,'LineWidth',2)
 set(gca,'Fontsize',15,'Fontweight','bold')
 name0=strsplit(fnames(istn).name,'.')
-print(gcf,'-djpeg',[name0{1},'_focal'])
+print(gcf,'-djpeg',[datadir name0{1},'_focal'])
+%saveas(gcf, [datadir 'Complex_West_M6.74.png'])
+
 %clear Mt M Dip* Strike* Rake* titlename name0
 %close all
 end
