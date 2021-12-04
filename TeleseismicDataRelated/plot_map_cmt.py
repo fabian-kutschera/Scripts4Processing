@@ -157,5 +157,6 @@ if not args.unicolor:
 
 scale_bar(ax, (0.1, 0.1), args.scalebarSize[0])
 fname = "BeachBallPlot.pdf"
-plt.savefig(fname, bbox_inches="tight")
+#plt.savefig(fname, bbox_inches="tight")
+plt.show()
 print(f"done writing {fname}")

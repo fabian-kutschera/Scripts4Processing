@@ -3,7 +3,7 @@
 #    first run:
 #       run computeMomentTensorSubSeisSol.py /import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/complex_fault_geometry/Complex_Middle_M7.07/HFFtest-fault.xdmf --NZ 1 --NH 1 --invertSls --oneDvel /import/freenas-m-05-seissol/kutschera/HIWI/Scripts/TeleseismicDataRelated/NIceland_1D.dat --proj '+proj=utm +zone=27'
 #    then:
-#       run drawMapFromMomentTensorFile.py /import/freenas-m-05-seissol/kutschera/HIWI/Scripts/TeleseismicDataRelated/PointSourceFile_1_1.h5 --MapBoundaries -19 -17 65 67
+#       run drawMapFromMomentTensorFile.py ../output/PointSourceFile_1_1_Simple_Middle_M7.333.h5 --MapBoundaries -20 -16 65 67 --outName 'Simple_Middle_M7.333' --Title 'Simple Middle M7.33' 
 # =============================================================================
 
 import numpy as np
@@ -16,6 +16,9 @@ parser.add_argument('--proj', nargs=1, metavar=('projname'), default = (''), hel
 parser.add_argument('--dGrid', nargs=1, metavar=('dGrid'), default = [1.0], help='distance between consecutive parallel or meridians drawn', type=float)
 parser.add_argument('--beachSize', nargs=1, metavar=('dGrid'), default = [1.0], help='adjustement factor for beach ball sizes', type=float)
 parser.add_argument('--MapBoundaries', nargs=4, metavar=('lonmin','lonmax','latmin','latmax'), help='coordinates of map frame', type=float)
+parser.add_argument('--outName', nargs=1, metavar=('outName'), default = (''),  help='give name which will be appended to output file')
+parser.add_argument('--Title', nargs=1, metavar=('Title'), default = False,  help='give title name')
+
 args = parser.parse_args()
 
 h5f = h5py.File(args.filename,'r')
@@ -102,14 +105,19 @@ for isrc in range(nsrc):
 m.drawmapscale(
     xmin+0.2*(xmax-xmin), ymin+0.2*(ymax-ymin),
     xmin+0.2*(xmax-xmin), ymin+0.2*(ymax-ymin),
-    15.,
+    30.,
     barstyle='fancy', labelstyle='simple',
     fillcolor1='w', fillcolor2='#555555',
-    fontsize=8,
+    fontsize=8, units='km',
     zorder=5,
     linewidth=0.2)
 
+if args.Title:
+    plt.title('{}'.format(str(args.Title[0])))
+    
+if args.outName:
+    plt.savefig('../output/BeachBallPlot_{}.png'.format(str(args.outName[0])), dpi=300, bbox_inches='tight')
+else:
+    plt.savefig('BeachBallPlot.png', dpi=300, bbox_inches='tight')
 
-
-plt.savefig('BeachBallPlot.png', dpi=300, bbox_inches='tight')
-#plt.show(dpi=300)
+plt.show()

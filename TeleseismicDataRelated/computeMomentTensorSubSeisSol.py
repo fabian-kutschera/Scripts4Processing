@@ -2,7 +2,7 @@
 # Example how to run code from Console:
 #     run computeMomentTensorSubSeisSol.py /import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/complex_fault_geometry/Complex_Middle_M7.07/HFFtest-fault.xdmf --NZ 1 --NH 1 --invertSls --oneDvel /import/freenas-m-05-seissol/kutschera/HIWI/Scripts/TeleseismicDataRelated/NIceland_1D.dat --proj '+init=EPSG:32627'
 #   or try (oneDvel)
-#     run computeMomentTensorSubSeisSol.py /import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/complex_fault_geometry/Complex_Middle_M7.07/HFFtest-fault.xdmf --NZ 1 --NH 1 --invertSls --oneDvel /import/freenas-m-05-seissol/kutschera/HIWI/Scripts/TeleseismicDataRelated/NIceland_1D.dat --proj '+proj=utm +zone=27'
+#     run computeMomentTensorSubSeisSol.py /import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/simple_fault_geometry/Simple_East_M7.341/HFFtest-fault.xdmf --NZ 1 --NH 1 --invertSls --oneDvel /import/freenas-m-05-seissol/kutschera/HIWI/Scripts/TeleseismicDataRelated/NIceland_1D.dat --proj '+proj=utm +zone=27' --outName 'Simple_East_M7.341'
 #   or try (asagiFile)
 #     run computeMomentTensorSubSeisSol.py /import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/complex_fault_geometry/Complex_Middle_M7.07/HFFtest-fault.xdmf --NZ 1 --NH 1 --invertSls --asagiFile /import/freenas-m-05-seissol/kutschera/HIWI/Scripts/TeleseismicDataRelated/vel_test.nc --proj '+proj=utm +zone=27'
 # =============================================================================
@@ -244,8 +244,8 @@ MomentTensor = np.transpose(aMomentTensorRTP)
 
 nsources = isrc
 if args.outName:
-    #h5f = h5py.File('../output/PointSourceFile_{}_{}_{}.h5'.format(args.NH[0],args.NZ[0], args.outName), 'w')
-    h5f = h5py.File('../output/PointSourceFile_%d_%d_%s.h5' %(args.NH[0],args.NZ[0], args.outName[0]), 'w')
+    h5f = h5py.File('../output/PointSourceFile_{}_{}_{}.h5'.format(str(args.NH[0]),str(args.NZ[0]), str(args.outName[0])), 'w')
+    #h5f = h5py.File('../output/PointSourceFile_%d_%d_%s.h5' %(args.NH[0],args.NZ[0], args.outName[0]), 'w')
 else:
     h5f = h5py.File('../output/PointSourceFile_%d_%d.h5' %(args.NH[0],args.NZ[0]),'w')
 h5f.create_dataset('NormalizedMomentRate', (nsources,ndt), dtype='d')
