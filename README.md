@@ -51,3 +51,24 @@ The `focal_plot.m` script requires to add [MATLAB code for moment tensor plottin
 This script can be used after [computeMomentTensorSubSeisSol.py](./TeleseismicDataRelated/computeMomentTensorSubSeisSol.py) since it requires the *PointSourceFile.h5* output. It will generate a **detailed beachball plot** which should be consistent with the output from [drawMapFromMomentTensorFile.py](./TeleseismicDataRelated/drawMapFromMomentTensorFile.py).
 
 The [focal_plot.m](./focal_plot.m) finds all *PointSource.h5* files within the given directory and saves the corresponding beachballs seperately as .jpg figures.
+
+#### [ComputeGroundMotionParametersFromSurfaceOutput_Hybrid.py](./ComputeGroundMotionParametersFromSurfaceOutput_Hybrid.py)
+
+A succesful run of the script requires several installations, like the pythonXDMFReader as well as gmpe-smtk + latest openquake engine.
+Procede as follows:
+
+Download gmpe-smtk and pythonXdmfReader module
+1. git clone https://github.com/GEMScienceTools/gmpe-smtk 
+2. git clone https://gitlab.lrz.de/thomas.ulrich/pythonXdmfReader.git or pip install seissolxdmf via https://pypi.org/project/seissolxdmf/
+
+Create links to smtk and pythonXdmfReader folders
+ln -s $LOCAL_DIR/gmpe-smtk/smtk
+ln -s $LOCAL_DIR/pythonXdmfReader
+
+Run python code (on single processor):
+
+- `python ComputeGroundMotionParametersFromSurfaceOutput_Hybrid.py --noMPI Sulawesi-surface.xdmf  
+or a faster run (parallel with MPI) , here assuming 4 cores processors 
+- `python ComputeGroundMotionParametersFromSurfaceOutput_Hybrid.py --MP 4 Sulawesi-surface.xdmf
+
+Additional packages might need to be installed; as for example [Mpi4Py](https://anaconda.org/conda-forge/mpi4py) to run the code in parallel with MPI.
