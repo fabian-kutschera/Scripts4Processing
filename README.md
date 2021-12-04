@@ -39,10 +39,10 @@ This script can be used after [computeMomentTensorSubSeisSol.py](./TeleseismicDa
 Note: In order to obtain an accurate Moment Rate use the `--asagiFile` flag within [computeMomentTensorSubSeisSol.py](./TeleseismicDataRelated/computeMomentTensorSubSeisSol.py).
 
 #### [drawMapFromMomentTensorFile.py](./TeleseismicDataRelated/drawMapFromMomentTensorFile.py)
-This script can be used after [computeMomentTensorSubSeisSol.py](./TeleseismicDataRelated/computeMomentTensorSubSeisSol.py) since it requires the *PointSourceFile.h5* output. It will plot **the beachball on a map**. Consider the following flags for a decent map:
+This script can be used after [computeMomentTensorSubSeisSol.py](./TeleseismicDataRelated/computeMomentTensorSubSeisSol.py) since it requires the *PointSourceFile.h5* output. It will plot **the beachball on a map**. Run the script from within Spyder e.g. via 
+`run drawMapFromMomentTensorFile.py ../output/PointSourceFile_1_1_Simple_Middle_M7.333.h5 --MapBoundaries -20 -16 65 67 --outName 'Simple_Middle_M7.333' --Title 'Simple Middle M7.33'`
 
-- `--proj`: **not** necessary if properly projected within [computeMomentTensorSubSeisSol.py](./TeleseismicDataRelated/computeMomentTensorSubSeisSol.py)
-- TO DO!!!
+The flag `--proj` is **not** necessary if properly projected within [computeMomentTensorSubSeisSol.py](./TeleseismicDataRelated/computeMomentTensorSubSeisSol.py)
 
 #### [focal_plot.m](./focal_plot.m)
 The `focal_plot.m` script requires to add [MATLAB code for moment tensor plotting](https://github.com/djpugh/MTplot) to the MATLAB path. The necessary files are already contained within this repository (MTplot) if cloned properly (see above).
