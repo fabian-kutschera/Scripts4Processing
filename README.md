@@ -40,6 +40,7 @@ Note: In order to obtain an accurate Moment Rate use the `--asagiFile` flag with
 
 #### [drawMapFromMomentTensorFile.py](./TeleseismicDataRelated/drawMapFromMomentTensorFile.py)
 This script can be used after [computeMomentTensorSubSeisSol.py](./TeleseismicDataRelated/computeMomentTensorSubSeisSol.py) since it requires the *PointSourceFile.h5* output. It will plot **the beachball on a map**. Run the script from within Spyder e.g. via 
+
 `run drawMapFromMomentTensorFile.py ../output/PointSourceFile_1_1_Simple_Middle_M7.333.h5 --MapBoundaries -20 -16 65 67 --outName 'Simple_Middle_M7.333' --Title 'Simple Middle M7.33'`
 
 The flag `--proj` is **not** necessary if properly projected within [computeMomentTensorSubSeisSol.py](./TeleseismicDataRelated/computeMomentTensorSubSeisSol.py)
