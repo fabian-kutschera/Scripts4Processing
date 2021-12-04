@@ -50,4 +50,4 @@ The `focal_plot.m` script requires to add [MATLAB code for moment tensor plottin
 
 This script can be used after [computeMomentTensorSubSeisSol.py](./TeleseismicDataRelated/computeMomentTensorSubSeisSol.py) since it requires the *PointSourceFile.h5* output. It will generate a **detailed beachball plot** which should be consistent with the output from [drawMapFromMomentTensorFile.py](./TeleseismicDataRelated/drawMapFromMomentTensorFile.py).
 
-TO DO!!!
+The [focal_plot.m](./focal_plot.m) finds all *PointSource.h5* files within the given directory and saves the corresponding beachballs seperately as .jpg figures.
