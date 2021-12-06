@@ -45,7 +45,10 @@ This script can be used after [computeMomentTensorSubSeisSol.py](./TeleseismicDa
 
 `run drawMapFromMomentTensorFile.py ../output/PointSourceFile_1_1_Simple_Middle_M7.333.h5 --MapBoundaries -20 -16 65 67 --outName 'Simple_Middle_M7.333' --Title 'Simple Middle M7.33'`
 
-The flag `--proj` is **not** necessary if properly projected within [computeMomentTensorSubSeisSol.py](./TeleseismicDataRelated/computeMomentTensorSubSeisSol.py)
+The flag `--proj` is **not** necessary if properly projected within [computeMomentTensorSubSeisSol.py](./TeleseismicDataRelated/computeMomentTensorSubSeisSol.py).
+
+In case you encounter any issues with this script, please consult [TeleseismicDataRelated](https://gitlab.lrz.de/thomas.ulrich/TuSeisSolScripts/-/tree/master/TeleseismicDataRelated) and use instead [plot_map_cmt.py](https://gitlab.lrz.de/thomas.ulrich/TuSeisSolScripts/-/blob/master/TeleseismicDataRelated/plot_map_cmt.py).
+
 
 #### [focal_plot.m](./focal_plot.m)
 The `focal_plot.m` script requires to add [MATLAB code for moment tensor plotting](https://github.com/djpugh/MTplot) to the MATLAB path. The necessary files are already contained within this repository (MTplot) if cloned properly (see above).
