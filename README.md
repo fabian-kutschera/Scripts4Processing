@@ -33,6 +33,8 @@ As an alternative to the [concatenate_EnF_t.py](./concatenate_EnF_t.py) one can 
 
 The computeMomentTensorSubSeisSol.py generates a Point***.h5 output file which can be processed with several other scripts (see below).
 
+In case you encounter any issues with this script, please consult [TeleseismicDataRelated](https://gitlab.lrz.de/thomas.ulrich/TuSeisSolScripts/-/tree/master/TeleseismicDataRelated) and use instead [compute_multi_cmt.py](https://gitlab.lrz.de/thomas.ulrich/TuSeisSolScripts/-/blob/master/TeleseismicDataRelated/compute_multi_cmt.py).
+
 #### [MomentRate_fromPointSource_h5.py](./MomentRate_fromPointSource_h5.py)
 This script can be used after [computeMomentTensorSubSeisSol.py](./TeleseismicDataRelated/computeMomentTensorSubSeisSol.py) since it requires the *PointSourceFile.h5* output; adjust the input *fname* accordingly. It will generate a **Moment Rate Plot** similar to [concatenate_EnF_t.py](./concatenate_EnF_t.py).
 
