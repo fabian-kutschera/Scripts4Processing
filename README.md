@@ -62,13 +62,14 @@ Download gmpe-smtk and pythonXdmfReader module
 2. git clone https://gitlab.lrz.de/thomas.ulrich/pythonXdmfReader.git or pip install seissolxdmf via https://pypi.org/project/seissolxdmf/
 
 Create links to smtk and pythonXdmfReader folders
-ln -s $LOCAL_DIR/gmpe-smtk/smtk
-ln -s $LOCAL_DIR/pythonXdmfReader
+- ln -s $LOCAL_DIR/gmpe-smtk/smtk
+- ln -s $LOCAL_DIR/pythonXdmfReader
 
 Run python code (on single processor):
 
-- `python ComputeGroundMotionParametersFromSurfaceOutput_Hybrid.py --noMPI Sulawesi-surface.xdmf  
+- `python ComputeGroundMotionParametersFromSurfaceOutput_Hybrid.py --noMPI Sulawesi-surface.xdmf`   
 or a faster run (parallel with MPI) , here assuming 4 cores processors 
-- `python ComputeGroundMotionParametersFromSurfaceOutput_Hybrid.py --MP 4 Sulawesi-surface.xdmf
+- `python ComputeGroundMotionParametersFromSurfaceOutput_Hybrid.py --MP 4 Sulawesi-surface.xdmf`  
+- e.g. `python ../../../Scripts/Script4Processing/ComputeGroundMotionParametersFromSurfaceOutput_Hybrid.py --MP 4 HFFtest-surface.xdmf`
 
 Additional packages might need to be installed; as for example [Mpi4Py](https://anaconda.org/conda-forge/mpi4py) to run the code in parallel with MPI.
