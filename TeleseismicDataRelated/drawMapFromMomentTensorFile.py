@@ -4,6 +4,7 @@
 #       run computeMomentTensorSubSeisSol.py /import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/complex_fault_geometry/Complex_Middle_M7.07/HFFtest-fault.xdmf --NZ 1 --NH 1 --invertSls --oneDvel /import/freenas-m-05-seissol/kutschera/HIWI/Scripts/TeleseismicDataRelated/NIceland_1D.dat --proj '+proj=utm +zone=27'
 #    then:
 #       run drawMapFromMomentTensorFile.py ../output/PointSourceFile_1_1_Simple_Middle_M7.333.h5 --MapBoundaries -20 -16 65 67 --outName 'Simple_Middle_M7.333' --Title 'Simple Middle M7.33' 
+# using output from Thomas new script: run drawMapFromMomentTensorFile.py ../../TuSeisSolScripts/TeleseismicDataRelated/PointSourceFile_1_1.h5 --MapBoundaries -20 -16 65 67
 # =============================================================================
 
 import numpy as np
