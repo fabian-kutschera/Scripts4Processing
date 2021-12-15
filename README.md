@@ -78,3 +78,11 @@ or a faster run (parallel with MPI) , here assuming 4 cores processors
 - e.g. `python ../../../Scripts/Script4Processing/ComputeGroundMotionParametersFromSurfaceOutput_Hybrid.py --MP 4 HFFtest-surface.xdmf`
 
 Additional packages might need to be installed; as for example [Mpi4Py](https://anaconda.org/conda-forge/mpi4py) to run the code in parallel with MPI.
+
+#### [CreateVtkCoastLineFromGmt.py](./CreateVtkCoastLineFromGmt.py)
+
+Generates a .vtk file of the coastline using GMT. The CoastLine.vtk file can be open using ParaView.
+
+Run the script from within Spyder (on heisenbug) e.g. via 
+
+`run CreateVtkCoastLineFromGmt.py --lon -20.5 -15.5 --lat 65 67 --proj '+proj=utm +zone=27' --resolution "h"`
