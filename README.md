@@ -81,7 +81,7 @@ Additional packages might need to be installed; as for example [Mpi4Py](https://
 
 #### [CreateVtkCoastLineFromGmt.py](./CreateVtkCoastLineFromGmt.py)
 
-Generates a .vtk file of the coastline using GMT. The CoastLine.vtk file can be opened using ParaView.
+Generates a .vtk file of the coastline using GMT. The CoastLine.vtk file can be opened using ParaView. The original script can be viewed in the official [SeisSol repository](https://github.com/SeisSol/SeisSol/blob/master/postprocessing/visualization/tools/CreateVtkCoastLineFromGmt.py).
 
 Run the script from within Spyder (on heisenbug) e.g. via 
 
