@@ -1,6 +1,8 @@
 function sshfunction(X,Y,BT,WH,WL,ind)
 
-Z=WL(:,ind)-abs(BT(:,ind))+WH(:,ind);
+%Z=WL(:,ind)-abs(BT(:,ind))+WH(:,ind);
+Z=BT(:,ind).*max(BT(:,ind),0)+WH(:,ind);
+
 Z=reshape(Z,size(X,1),size(X,2));
 pcolor(X,Y,Z)
 shading flat

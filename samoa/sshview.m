@@ -18,6 +18,8 @@ sshfunction(X,Y,BT,WL,WH,7);
 ax3=subplot(1,3,3); % 600 --> 61st element
 sshfunction(X,Y,BT,WL,WH,61);
 
-h=colorbar('Location','east')
-%h.Position
+h=colorbar('Location','east');
+pos=h.Position;
+hx=pos(1)*1.1; hy=pos(2); hw=pos(3); hh=pos(4);
+h.Position=[hx, hy, hw, hh];
 h.Label.String='ssh [m]'

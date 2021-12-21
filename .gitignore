@@ -133,3 +133,4 @@ input/*
 output/*
 token
 smtk
+samoa/*.mat
