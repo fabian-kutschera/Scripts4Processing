@@ -1,7 +1,7 @@
 clear all
 close all, clc
 
-load('/import/freenas-m-05-seissol/bo/CHEESE/forFabian/west.mat');
+load('/import/freenas-m-05-seissol/kutschera/HIWI/Scripts/Script4Processing/samoa/simple_east_M734.mat');
 
 %% Graphical Representation
 
@@ -22,4 +22,4 @@ h=colorbar('Location','east');
 pos=h.Position;
 hx=pos(1)*1.1; hy=pos(2); hw=pos(3); hh=pos(4);
 h.Position=[hx, hy, hw, hh];
-h.Label.String='ssh [m]'
+h.Label.String='ssha [m]'
