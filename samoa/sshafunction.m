@@ -1,3 +1,4 @@
+% -*- coding: utf-8 -*-
 function sshafunction(X,Y,BT,WH,WL,ind)
 
 %Z=WL(:,ind)-abs(BT(:,ind))+WH(:,ind);
