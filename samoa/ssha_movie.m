@@ -40,4 +40,4 @@ for ind=linspace(1,5,5)
 
 end
 
-close(mov
+close(movieid)
