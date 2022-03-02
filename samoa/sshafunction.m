@@ -22,6 +22,7 @@ Z=reshape(Z,sqrt(length(Z)),[]);
 % 
 % %plot
 % pcolor(Lon,Lat,Z)
+
 pcolor(X,Y,Z)
 shading flat
 
