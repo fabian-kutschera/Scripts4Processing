@@ -86,3 +86,11 @@ Generates a .vtk file of the coastline using GMT. The CoastLine.vtk file can be 
 Run the script from within Spyder (on heisenbug) e.g. via 
 
 `run CreateVtkCoastLineFromGmt.py --lon -20.5 -15.5 --lat 65 67 --proj '+proj=utm +zone=27' --resolution "h"`
+
+#### [compute_diff_seissol_data.py](./compute_diff_seissol_data.py)
+
+Make difference between 2 (paraview) output files: f2-f1. The output must be from the same mesh, but the partionning may differ.
+
+Run the script e.g. via
+
+`python /import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/SeisSol/postprocessing/science/compute_diff_seissol_data.py output_o4/HFFZ_fullycp_o4-surface.xdmf output_o6/HFFZ_fullycp_o6-surface.xdmf --idt 0 20 40 60 80 100 120 140 160 180 200 220 240 260 280 300 320 340 360 380 --Data u3 v3`
