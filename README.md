@@ -97,7 +97,7 @@ Run the script e.g. via
 
 #### [extractDataFromUnstructuredOutput.py](extractDataFromUnstructuredOutput.py)
 
-This script can help to resample SeisSol .xdmf output files and/ or extract timesteps/ variables of interest. The script depends on [recreateXdmf.py](recreateXdmf.py).
+This script can help to resample SeisSol .xdmf output files and/ or extract timesteps/ variables of interest. The script depends on [recreateXdmf.py](recreateXdmf.py), obtained from [SeisSol](https://github.com/SeisSol/SeisSol/tree/master/postprocessing/visualization/tools).
 
 Run the script from the terminal e.g. via
 
