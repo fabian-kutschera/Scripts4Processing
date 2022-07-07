@@ -94,3 +94,11 @@ Make difference between 2 (paraview) output files: f2-f1. The output must be fro
 Run the script e.g. via
 
 `python /import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/SeisSol/postprocessing/science/compute_diff_seissol_data.py output_o4/HFFZ_fullycp_o4-surface.xdmf output_o6/HFFZ_fullycp_o6-surface.xdmf --idt 0 20 40 60 80 100 120 140 160 180 200 220 240 260 280 300 320 340 360 380 --Data u3 v3`
+
+#### [extractDataFromUnstructuredOutput.py](extractDataFromUnstructuredOutput.py)
+
+This script can help to resample SeisSol .xdmf output files and/ or extract timesteps/ variables of interest. The script depends on [recreateXdmf.py](recreateXdmf.py).
+
+Run the script from the terminal e.g. via
+
+`python /import/freenas-m-05-seissol/kutschera/HIWI/Scripts/Script4Processing/extractDataFromUnstructuredOutput.py HFFZ_fullycp_o4_300s-surface.xdmf --idt $(seq 0 720) --Data u3 locationFlag`
