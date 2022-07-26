@@ -138,3 +138,6 @@ samoa/*.mat
 *.avi
 samoa/simple_middle_M733
 samoa/simple_middle_M733/*.png
+post_plotting/output*
+post_plotting/*.gif
+post_plotting/*.mp4
