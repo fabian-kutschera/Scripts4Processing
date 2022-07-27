@@ -141,3 +141,4 @@ samoa/simple_middle_M733/*.png
 post_plotting/output*
 post_plotting/*.gif
 post_plotting/*.mp4
+post_plotting/total_stack_sorted.csv
