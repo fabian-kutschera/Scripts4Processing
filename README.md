@@ -102,3 +102,9 @@ This script can help to resample SeisSol .xdmf output files and/ or extract time
 Run the script from the terminal e.g. via
 
 `python /import/freenas-m-05-seissol/kutschera/HIWI/Scripts/Script4Processing/extractDataFromUnstructuredOutput.py HFFZ_fullycp_o4_300s-surface.xdmf --idt $(seq 0 720) --Data u3 locationFlag`
+
+#### [vizualizeBoundaryConditions.py](vizualizeBoundaryConditions.py)
+
+Double check that the boundary conditions on the mesh are correct with e.g.:
+
+`python ../../Scripts4Processing/vizualizeBoundaryConditions.py Samos_WL.xdmf 0`
