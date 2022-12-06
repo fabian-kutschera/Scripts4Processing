@@ -79,6 +79,8 @@ or a faster run (parallel with MPI) , here assuming 4 cores processors
 
 Additional packages might need to be installed; as for example [Mpi4Py](https://anaconda.org/conda-forge/mpi4py) to run the code in parallel with MPI.
 
+With a recent SeisSol update renaming variables (from u,v to v1,v2) the following adjusted script needs to be run: [ComputeGroundMotionParametersFromSurfaceOutput_Hybrid_newVar.py](./ComputeGroundMotionParametersFromSurfaceOutput_Hybrid_newVar.py).  
+
 #### [CreateVtkCoastLineFromGmt.py](./CreateVtkCoastLineFromGmt.py)
 
 Generates a .vtk file of the coastline using GMT. The CoastLine.vtk file can be opened using ParaView. The original script can be viewed in the official [SeisSol repository](https://github.com/SeisSol/SeisSol/blob/master/postprocessing/visualization/tools/CreateVtkCoastLineFromGmt.py).
