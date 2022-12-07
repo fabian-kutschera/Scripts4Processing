@@ -116,7 +116,7 @@ Double check that the boundary conditions on the mesh are correct with e.g.:
 The [displacement-converter](https://samoa.readthedocs.io/en/latest/converting-SeisSol-output.html) is needed to convert SeisSol surface output files into readible format for samoa or GeoClaw.
 
 1. Select only relevant timesteps and data using [extractDataFromUnstructuredOutput.py](extractDataFromUnstructuredOutput.py)
-2. Convert variable names into old standard using [convert_u1u2u3_2_UVW.py](./displacement-converter/convert_u1u2u3_2_UVW.py)
+2. Convert variable names into old standard using [convert_u1u2u3_2_UVW.py](./displacement-converter/convert_u1u2u3_2_UVW.py) obtained from [SamoaRelated](https://gitlab.lrz.de/thomas.ulrich/TuSeisSolScripts/-/blob/master/SamoaRelated/convert_u1u2u3_2_UVW.py).
 3. Transform the geometry array of a SeisSol surface output file to the geocentric coordinate system using [convert_geographic_SeisSol_geom_v0.9.py](./displacement-converter/convert_geographic_SeisSol_geom_v0.9.py)
 4. Run displacement-converter, view example: [runconverterLMU_WGS84.sh](./displacement-converter/runconverterLMU_WGS84.sh)
 
