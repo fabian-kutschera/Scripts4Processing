@@ -110,3 +110,12 @@ Run the script from the terminal e.g. via
 Double check that the boundary conditions on the mesh are correct with e.g.:
 
 `python ../../Scripts4Processing/vizualizeBoundaryConditions.py Samos_WL.xdmf 0`
+
+### displacement-converter
+
+The [displacement-converter](https://samoa.readthedocs.io/en/latest/converting-SeisSol-output.html) is needed to convert SeisSol surface output files into readible format for samoa or GeoClaw.
+
+1. Select only relevant timesteps and data using [extractDataFromUnstructuredOutput.py](extractDataFromUnstructuredOutput.py)
+2. Convert variable names into old standard using ...
+3. Transform the geometry array of a SeisSol surface output file to the geocentric coordinate system using ...
+4. Run displacement-converter, view example: ....
