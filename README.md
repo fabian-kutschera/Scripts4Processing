@@ -119,5 +119,7 @@ The [displacement-converter](https://samoa.readthedocs.io/en/latest/converting-S
 2. Convert variable names into old standard using [convert_u1u2u3_2_UVW.py](./displacement-converter/convert_u1u2u3_2_UVW.py) obtained from [SamoaRelated](https://gitlab.lrz.de/thomas.ulrich/TuSeisSolScripts/-/blob/master/SamoaRelated/convert_u1u2u3_2_UVW.py).
 3. Transform the geometry array of a SeisSol surface output file to the geocentric coordinate system using [convert_geographic_SeisSol_geom_v0.9.py](./displacement-converter/convert_geographic_SeisSol_geom_v0.9.py)
 4. Run displacement-converter, view example: [runconverterLMU_WGS84.sh](./displacement-converter/runconverterLMU_WGS84.sh)
+5. Prevent sharp displacement discontinuities at the limits of the region by applying a Hanning window: [tapperNetcdf.py](./displacement-converter/tapperNetcdf.py)
+6. Convert a NetCDF displacement file to the tt3 format (GeoClaw): [convert_netcdf_tt3.py](./displacement-converter/convert_netcdf_tt3.py)
 
 Additionally, you might need to rename variables within the GEBCO NetCDF file using [convert_names.sh](./displacement-converter/convert_names.sh).
