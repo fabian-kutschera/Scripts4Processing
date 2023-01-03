@@ -29,6 +29,7 @@ def plot_fgmax_grid(outdir,plotdir):
     print(numpy.min(fg.B), numpy.max(fg.B))
     print(numpy.min(fg.hmin), numpy.max(fg.hmin))
     zeta = numpy.where(fg.B<0, -(fg.hmin+fg.h), 10)
+    print(numpy.min(zeta), numpy.max(zeta))
     plt.contourf(fg.X,fg.Y,zeta,clines_zeta,colors=colors)
     #plt.contour(fg.X,fg.Y,-(fg.hmin+fg.h))
     cbar = plt.colorbar()

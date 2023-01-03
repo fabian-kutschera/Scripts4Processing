@@ -28,7 +28,7 @@ output_format = 'binary'
 fgout_grid = fgout_tools.FGoutGrid(fgno, outdir, output_format)
 
 # Plot one frame of fgout data 
-fgframe = 7 # frame -1 = minutes
+fgframe = 4 #7 # frame -1 = minutes
 fgout = fgout_grid.read_frame(fgframe)
 
 fig = plt.figure()
@@ -54,13 +54,15 @@ plt.yticks(ticks=y_ticks, labels = np.char.add(np.round(y_ticks, 1).astype(str),
 plt.title("t = {} min".format(int(fgout.t/60)))
 
 # colorbar
+plt.text(27.0, 38.15, "ssha (m)", horizontalalignment='center', verticalalignment='center',
+             fontsize=ps, rotation="horizontal")
 cbaxes = inset_axes(ax1, width="45.2%", height="5%", loc="upper right")
 cbar = plt.colorbar(img, orientation="horizontal", cax=cbaxes, ticks=[-0.8,0.0,0.8], extend="both")
 cbar.ax.tick_params(which="major", labelsize=ps, length=10, width=2, direction="inout")
 cbar.ax.tick_params(which="minor", length=6, width=1.0)
 cbar.ax.minorticks_on()
 
-fname = 'fgout_frame%s_bay.png' % str(fgframe).zfill(4)
+fname = 'fgout_frame%s_bay_Fra.png' % str(fgframe).zfill(4)
 savefig(fname, dpi=300)#, bbox_inches='tight')
 print('Created ',fname)
 

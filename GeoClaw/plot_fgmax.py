@@ -24,6 +24,7 @@ def plot_fgmax_grid(outdir,plotdir):
     plt.figure(1)
     plt.clf()
     zeta = numpy.where(fg.B>0, fg.h, fg.h+fg.B)   # surface elevation in ocean
+    print(numpy.min(zeta), numpy.max(zeta))
     plt.contourf(fg.X,fg.Y,zeta,clines_zeta,colors=colors)
     cbar = plt.colorbar()
     cbar.ax.set_title('Meters', pad=8)#, rotation=270)
