@@ -2,6 +2,8 @@
 function sshafunction(X,Y,BT,WH,WL,ind)
 
 %Z=WL(:,ind)-abs(BT(:,ind))+WH(:,ind);
+
+%BT(BT>0)=nan; %makes topo invisible
 Z=BT(:,ind).*max(BT(:,ind),0)+WH(:,ind);
 
 % %reshape
@@ -28,8 +30,12 @@ shading flat
 
 %Crameri
 load('/import/freenas-m-05-seissol/kutschera/HIWI/Scripts/CrameriColourmaps/ScientificColourMaps7/cork/cork.mat')
-colormap(cork)
+%colormap(cork)
+ax1 = gca;
+set(ax1,'Colormap',cork)
 caxis([-0.6, 0.6])
+
+
 xlim([-20 -16.5])
 ylim([65.4 66.9])
 

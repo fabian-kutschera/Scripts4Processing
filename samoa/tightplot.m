@@ -109,5 +109,7 @@ ylabel(h, 'ssha [m]', 'Rotation', 0);
 h.Label.Position(2)=h.Label.Position(2)+0.75;
 h.Label.Position(1)=h.Label.Position(1)-3; %x-direction
 
+grid off
 
-exportgraphics(f,'ssha.pdf')
+%exportgraphics(f,'ssha_new.pdf','Resolution', 300)
+print('ssha_new_highres','-dpng','-r450')
