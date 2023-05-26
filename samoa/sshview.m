@@ -1,7 +1,6 @@
 clear 
 close all, clc
 
-
 %% Graphical Representation
 f=figure('PaperType','a4')
 f.Units='centimeters';

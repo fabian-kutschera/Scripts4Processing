@@ -3,8 +3,17 @@ function sshafunction(X,Y,BT,WH,WL,ind)
 
 %Z=WL(:,ind)-abs(BT(:,ind))+WH(:,ind);
 
-%BT(BT>0)=nan; %makes topo invisible
+BT(BT>0)=nan; %makes topo invisible - functional
+disp(max(max(BT)))
+disp(min(min(BT)))
 Z=BT(:,ind).*max(BT(:,ind),0)+WH(:,ind);
+% with topo - functional
+%Z=BT(:,ind).*max(BT(:,ind),0)+WH(:,ind);
+
+Z(Z>0)=0; % this needs to be updated to find indices only and subsequently set them to zero
+
+disp(max(max(Z)))
+disp(min(min(Z)))
 
 % %reshape
 % x = reshape(X,[],1);

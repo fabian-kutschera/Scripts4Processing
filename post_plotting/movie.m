@@ -1,4 +1,4 @@
-movieid=VideoWriter('output_combined/ssva');
+movieid=VideoWriter('output_combined/ssvv');
 movieid.FrameRate=4;
 movieid.Quality=100;
 open(movieid)

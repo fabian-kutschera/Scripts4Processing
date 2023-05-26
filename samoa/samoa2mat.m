@@ -8,8 +8,14 @@ datadir2='/import/freenas-m-05-seissol/kutschera/HIWI/samoa/outputSamoa_EGU2021/
 geometry = hdf5read(datadir,'/20/g');
 waterheight=hdf5read(datadir,'/20/a/k');
 bathymetry=hdf5read(datadir,'/20/a/b');
-
-% scatter(geometry(1,:),geometry(2,:),[],waterheight(:),'filled')
+%% TESTING
+ind = 20;
+[X,Y]=meshgrid(min(geometry(1,:)):150:max(geometry(1,:)),min(geometry(2,:)):150:max(geometry(2,:)));
+geometry = hdf5read(datadir,['/',num2str(ind-1),'/g']);
+waterheight=hdf5read(datadir,['/',num2str(ind-1),'/a/k']);
+grid_waterheight=griddata(geometry(1,:),geometry(2,:),waterheight(:),X(:),Y(:));
+%%
+scatter(geometry(1,:),geometry(2,:),[],waterheight(:),'filled')
 toc
 %%
 %set new uniform girds for all time steps
@@ -78,5 +84,5 @@ BT(:,ind)=grid_bathymetry;
 clear geometry waterheight grid* waterlevel bathymetry
 end
 
-save complex_west_M674.mat WH WL BT X Y -v7.3
+%save complex_west_M674.mat WH WL BT X Y -v7.3
 toc
