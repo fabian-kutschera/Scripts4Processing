@@ -146,3 +146,5 @@ post_plotting/input*
 post_plotting/east/
 post_plotting/east/*
 post_plotting/test*
+*.asv
+samoa/*.asv
