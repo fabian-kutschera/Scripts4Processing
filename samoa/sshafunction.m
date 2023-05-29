@@ -1,16 +1,23 @@
 % -*- coding: utf-8 -*-
 function sshafunction(X,Y,BT,WH,WL,ind)
-
 %Z=WL(:,ind)-abs(BT(:,ind))+WH(:,ind);
 
-BT(BT>0)=nan; %makes topo invisible - functional
+BT(BT>0)=nan; % makes topo invisible - functional
+
+% find indices - before tsunami at first timestep
+Z=BT(:,1).*max(BT(:,1),0)+WH(:,1);
+indices = find(Z>0);
+
 disp(max(max(BT)))
 disp(min(min(BT)))
 Z=BT(:,ind).*max(BT(:,ind),0)+WH(:,ind);
 % with topo - functional
 %Z=BT(:,ind).*max(BT(:,ind),0)+WH(:,ind);
 
-Z(Z>0)=0; % this needs to be updated to find indices only and subsequently set them to zero
+%indices = find(Z>0)
+Z(indices) = 0;
+
+% Z(Z>0)=0; % works only for t=0; this needs to be updated to find indices only and subsequently set them to zero
 
 disp(max(max(Z)))
 disp(min(min(Z)))
