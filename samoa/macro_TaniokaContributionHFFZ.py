@@ -1,3 +1,6 @@
+# Project 3D Surface onto 2D plane following
+# https://discourse.paraview.org/t/project-3d-surface-onto-2d-plane/709
+# https://stackoverflow.com/questions/45544709/paraview-view-a-2d-projection-of-a-3d-object/45595967#45595967
 # trace generated using paraview version 5.10.0
 #import paraview
 #paraview.compatibility.major = 5
