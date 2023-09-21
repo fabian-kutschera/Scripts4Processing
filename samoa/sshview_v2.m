@@ -33,11 +33,21 @@ subtitle(['t=',num2str(time1),'s']);
 text(-20,66.8,'Simple-West','Units','data','Color','[0.6350, 0.0780, 0.1840]','FontSize',12,'FontWeight','bold');
 hold on
 contour(LON,LAT,bathymetryData,[0 0], 'k-', 'LineWidth', 0.4)
-% Plot szn gauges
-x_syn = [-17.3681, -18.8688, -18.6089, -18.5063, -18.1218, -17.9964];
-y_syn = [66.039, 66.182, 66.091, 65.965, 65.722, 66.518];
+% Plot syn gauges
+x_syn = [-17.9964, -18.8688, -18.6089, -17.3681, -18.5063, -18.1218];
+y_syn = [66.518, 66.182, 66.091, 66.039, 65.965, 65.722];
 hold on
-plot(x_syn,y_syn,'r.','MarkerSize',12)
+plot(x_syn,y_syn,'r.','MarkerSize',11)
+hold on
+% Plot syn gauges numbers
+x_syn_nr = x_syn + [0.12, -0.31, -0.31, 0.12, -0.31, -0.31]
+y_syn_nr = y_syn
+nr = {'6', '1', '2', '5', '3', '4'}
+text(x_syn_nr, y_syn_nr, nr, 'Color','red','FontSize',10)
+hold on
+% Plot Hypo Simple-West
+plot_epi("/import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/Nucleation_locations/epicentre_simple_west.csv")
+
 axes(ha(2)); 
 sshafunction(X,Y,BT,WL,WH,ind2);
 subtitle(['t=',num2str(time2),'s']);
@@ -58,6 +68,10 @@ sshafunction(X,Y,BT,WL,WH,ind1);
 text(-20,66.8,'Simple-Middle','Units','data','Color','[0.6350, 0.0780, 0.1840]','FontSize',12,'FontWeight','bold');
 hold on
 contour(LON,LAT,bathymetryData,[0 0], 'k-', 'LineWidth', 0.4)
+hold on
+% Plot Hypo Simple-Middle
+plot_epi("/import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/Nucleation_locations/epicentre_simple_middle.csv")
+
 axes(ha(5)); 
 sshafunction(X,Y,BT,WL,WH,ind2);
 hold on
@@ -76,6 +90,10 @@ sshafunction(X,Y,BT,WL,WH,ind1);
 text(-20,66.8,'Simple-East','Units','data','Color','[0.6350, 0.0780, 0.1840]','FontSize',12,'FontWeight','bold');
 hold on
 contour(LON,LAT,bathymetryData,[0 0], 'k-', 'LineWidth', 0.4)
+hold on
+% Plot Hypo Simple-East
+plot_epi("/import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/Nucleation_locations/epicentre_simple_east.csv")
+
 axes(ha(8)); 
 sshafunction(X,Y,BT,WL,WH,ind2);
 hold on
@@ -94,6 +112,10 @@ sshafunction(X,Y,BT,WL,WH,ind1);
 text(-20,66.8,'Complex-West','Units','data','Color','[0.6350, 0.0780, 0.1840]','FontSize',12,'FontWeight','bold');
 hold on
 contour(LON,LAT,bathymetryData,[0 0], 'k-', 'LineWidth', 0.4)
+hold on
+% Plot Hypo Complex-West
+plot_epi("/import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/Nucleation_locations/complex_locations/epicentre_complex_west.csv")
+
 axes(ha(11)); 
 sshafunction(X,Y,BT,WL,WH,ind2);
 hold on
@@ -112,6 +134,10 @@ sshafunction(X,Y,BT,WL,WH,ind1);
 text(-20,66.8,'Complex-Middle','Units','data','Color','[0.6350, 0.0780, 0.1840]','FontSize',12,'FontWeight','bold');
 hold on
 contour(LON,LAT,bathymetryData,[0 0], 'k-', 'LineWidth', 0.4)
+hold on
+% Plot Hypo Complex-Middle
+plot_epi("/import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/Nucleation_locations/complex_locations/epicentre_complex_middle.csv")
+
 axes(ha(14)); 
 sshafunction(X,Y,BT,WL,WH,ind2);
 hold on
@@ -130,6 +156,10 @@ sshafunction(X,Y,BT,WL,WH,ind1);
 text(-20,66.8,'Complex-East','Units','data','Color','[0.6350, 0.0780, 0.1840]','FontSize',12,'FontWeight','bold');
 hold on
 contour(LON,LAT,bathymetryData,[0 0], 'k-', 'LineWidth', 0.4)
+hold on
+% Plot Hypo Complex-East
+plot_epi("/import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/Nucleation_locations/complex_locations/epicentre_complex_east.csv")
+
 axes(ha(17)); 
 sshafunction(X,Y,BT,WL,WH,ind2);
 hold on

@@ -31,11 +31,28 @@ hold on
 contour(LON,LAT,bathymetryData,[0 0], '-k', 'LineWidth', 1)
 
 
-% Plot szn gauges
-x_syn = [-17.3681, -18.8688, -18.6089, -18.5063, -18.1218, -17.9964];
-y_syn = [66.039, 66.182, 66.091, 65.965, 65.722, 66.518];
+% Plot syn gauges
+x_syn = [-17.9964, -18.8688, -18.6089, -17.3681, -18.5063, -18.1218];
+y_syn = [66.518, 66.182, 66.091, 66.039, 65.965, 65.722];
 hold on
 plot(x_syn,y_syn,'r.','MarkerSize',14)
+
+% Plot syn gauges numbers
+x_syn_nr = x_syn + [0.03, -0.09, -0.09, 0.03, -0.09, -0.09]
+y_syn_nr = y_syn
+nr = {'6', '1', '2', '5', '3', '4'}
+hold on
+text(x_syn_nr, y_syn_nr, nr, 'Color','red','FontSize',14)
+
+% Plot Hypo Simple-East
+data = readtable("/import/freenas-m-05-seissol/kutschera/HIWI/./SeisSol/Nucleation_locations/epicentre_simple_east.csv")
+x_epi = data{:,1}; 
+y_epi = data{:,2};
+[X_epi,Y_epi] = xyz2LatLon(x_epi,y_epi);
+hold on
+plot(X_epi,Y_epi,'MarkerFaceColor','yellow','Marker','pentagram','MarkerSize',16,'MarkerEdgeColor','black')
+
+
 
 
 
