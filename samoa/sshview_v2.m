@@ -37,7 +37,7 @@ contour(LON,LAT,bathymetryData,[0 0], 'k-', 'LineWidth', 0.4)
 x_syn = [-17.9964, -18.8688, -18.6089, -17.3681, -18.5063, -18.1218];
 y_syn = [66.518, 66.182, 66.091, 66.039, 65.965, 65.722];
 hold on
-plot(x_syn,y_syn,'r.','MarkerSize',11)
+plot(x_syn,y_syn,'r.','MarkerSize',12)
 hold on
 % Plot syn gauges numbers
 x_syn_nr = x_syn + [0.12, -0.31, -0.31, 0.12, -0.31, -0.31]
