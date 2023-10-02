@@ -19,6 +19,6 @@ print("M0 = {} and Mw = {}.".format(M0, Mw))
 # plot chosen energy output
 dt = df["time"][1]
 moment_rate = np.gradient(df["seismic_moment"], dt)
-plt.plot(df["time"], moment_rate, label="{:.2f}".format(Mw)
+plt.plot(df["time"], moment_rate, label="{:.2f}".format(Mw))
 plt.legend()
 plt.savefig("{:.2f}.png".format(Mw))
