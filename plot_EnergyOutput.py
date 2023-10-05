@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Oct  4 21:18:55 2023
+
+@author: fkutschera
+"""
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -5,7 +13,7 @@ import argparse
 import sys
 import os
 
-description = '''Plot Energy output(s). 
+description = '''Plot SeisSol energy output(s). 
 You can run the script with the default (Moment rate [MR]) or select multiple energy outputs available from a SeisSol simulation.
 You can also compare the energy outputs of different simulations.)'''
 parser = argparse.ArgumentParser(description=description)
