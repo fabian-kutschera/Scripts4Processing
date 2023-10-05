@@ -38,7 +38,9 @@ for i in range(0,len(args.Input)):
         
     df = pd.read_csv(args.Input[i])
     M0 = df['seismic_moment'][len(df)-1]
-    Mw = 2/3 * (np.log10(M0) - 9.1)
+    Mw = 2.0/3.0 * np.log10(M0) - 6.07;
+    # see https://github.com/SeisSol/SeisSol/blob/829f5e258c12046ae3626837bab6d19d13d6c006/src/ResultWriter/EnergyOutput.cpp#L436C45-L436C45
+
     print("M0 = {:.2e} and Mw = {:.2f}".format(M0, Mw))
     
     for j in range(0,len(args.Data)):
