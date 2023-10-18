@@ -17,7 +17,7 @@ description = '''Plot SeisSol energy output(s).
 You can run the script with the default (Moment rate [MR]) or select multiple energy outputs available from a SeisSol simulation.
 You can also compare the energy outputs of different simulations.)'''
 parser = argparse.ArgumentParser(description=description)
-parser.add_argument("Input", nargs="+", metavar=("file"), 
+parser.add_argument("Input", nargs="+", metavar=("file"),
                     help="energy.csv file(s) from your SeisSol simulation. Multiple input files possible.")
 parser.add_argument("-d", "--Data", type=str, required=False, nargs="+", metavar=("variable"), default=["MR"], 
                     help="Data to plot. Default: Moment rate (MR). Other available options are Gravitational energy (GE), Acoustic energy (AE), Acoustic kinetic energy (AKE), Elastic kinetic energy (EKE), Elastic energy (EE), Total frictional work (TFW), Static frictional work (SFW), Seismic moment (SM), Plastic moment (PM)")
@@ -70,7 +70,9 @@ for i in range(0,len(args.Input)):
 
         print("Energy output selected is {}: {}".format(args.Data[j], energy_output))
         
-        plt.plot(df["time"], df[energy_output], label="Mw {:.2f}".format(Mw))
+        plt.plot(df["time"], df[energy_output], label="Mw {:.2f}, {}".format(Mw,args.Data[j].upper()))
+        #plt.plot(df["time"], df[energy_output], label="Mw {:.2f}".format(Mw))
+
     plt.legend()
     plt.xlabel(args.xlabel)
     plt.ylabel(args.ylabel)
