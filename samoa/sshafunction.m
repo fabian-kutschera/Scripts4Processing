@@ -49,7 +49,9 @@ load('/import/freenas-m-05-seissol/kutschera/HIWI/Scripts/CrameriColourmaps/Scie
 %colormap(cork)
 ax1 = gca;
 set(ax1,'Colormap',cork)
-caxis([-0.6, 0.6])
+%Don't forget to change again
+%caxis([-0.6, 0.6])
+caxis([-0.1, 0.1])
 
 
 xlim([-20 -16.5])

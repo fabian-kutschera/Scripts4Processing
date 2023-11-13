@@ -3,7 +3,9 @@ close all, clc
 
 % 
 % Simple-West
-load('/import/freenas-m-05-seissol/kutschera/HIWI/Scripts/Script4Processing/samoa/simple_west_M734.mat');
+%load('/import/freenas-m-05-seissol/kutschera/HIWI/Scripts/Script4Processing/samoa/simple_west_M734.mat');
+% Complex Middle
+load('/import/freenas-m-05-seissol/kutschera/HIWI/Scripts/Script4Processing/samoa/complex_middle_M707.mat');
 % Graphical Representation
 f=figure('PaperType','a4')
 f.Units='centimeters';
@@ -13,8 +15,10 @@ f.Position = [0.1 0.1 23 29];
 [X,Y] = xyz2LatLon(X,Y);
 
 ax1=subplot(1,1,1);
-sshafunction(X,Y,BT,WL,WH,2);  % 10 s --> 2nd element (now first to find Z indicies larger zero
-title("t = 10s");
+sshafunction(X,Y,BT,WL,WH,13);  % 120 s --> 2nd element (now first to find Z indicies larger zero
+%sshafunction(X,Y,BT,WL,WH,2);  % 10 s --> 2nd element (now first to find Z indicies larger zero
+title("t = 120s");
+%title("t = 10");
 
 colorbarfkt()
 
@@ -30,6 +34,8 @@ hold on
 %contour(LON,LAT,bathymetryData,[0 0], 'k', 'LineWidth', 1.5)
 contour(LON,LAT,bathymetryData,[0 0], '-k', 'LineWidth', 1)
 
+% Plot scenario name
+text(-20,66.8,'Complex-Middle','Units','data','Color','[0.6350, 0.0780, 0.1840]','FontSize',12,'FontWeight','bold');
 
 % Plot syn gauges
 x_syn = [-17.9964, -18.8688, -18.6089, -17.3681, -18.5063, -18.1218];
@@ -45,16 +51,15 @@ hold on
 text(x_syn_nr, y_syn_nr, nr, 'Color','red','FontSize',14)
 
 % Plot Hypo Simple-East
-data = readtable("/import/freenas-m-05-seissol/kutschera/HIWI/./SeisSol/Nucleation_locations/epicentre_simple_east.csv")
-x_epi = data{:,1}; 
-y_epi = data{:,2};
-[X_epi,Y_epi] = xyz2LatLon(x_epi,y_epi);
+%data = readtable("/import/freenas-m-05-seissol/kutschera/HIWI/./SeisSol/Nucleation_locations/epicentre_simple_east.csv")
+%x_epi = data{:,1}; 
+%y_epi = data{:,2};
+%[X_epi,Y_epi] = xyz2LatLon(x_epi,y_epi);
+%hold on
+%plot(X_epi,Y_epi,'MarkerFaceColor','yellow','Marker','pentagram','MarkerSize',16,'MarkerEdgeColor','black')
 hold on
-plot(X_epi,Y_epi,'MarkerFaceColor','yellow','Marker','pentagram','MarkerSize',16,'MarkerEdgeColor','black')
-
-
-
-
+% Plot Hypo Complex-Middle
+plot_epi("/import/freenas-m-05-seissol/kutschera/HIWI/SeisSol/Nucleation_locations/complex_locations/epicentre_complex_middle.csv")
 
 
 
@@ -67,3 +72,4 @@ plot(X_epi,Y_epi,'MarkerFaceColor','yellow','Marker','pentagram','MarkerSize',16
 % xlabel(han,'Longitude');
 
 %exportgraphics(f,'ssha.pdf')
+exportgraphics(f,'fig07_reviewerII_ComplexMiddle.pdf','Resolution', 300)

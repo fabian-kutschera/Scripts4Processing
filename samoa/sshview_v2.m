@@ -182,7 +182,10 @@ pos=h.Position;
 hx=pos(1)*1.1; hy=pos(2)*8.9; hw=pos(3)*0.8; hh=pos(4)*2;
 %hx=pos(1)*1.08; hy=pos(2)*8.9; hw=pos(3)*0.8; hh=pos(4)*2;
 h.Position=[hx, hy, hw, hh];
-h.Ticks = [-0.6 -0.4 -0.2 0.0 0.2 0.4 0.6];
+%h.Ticks = [-0.6 -0.4 -0.2 0.0 0.2 0.4 0.6];
+% Don't forget to change later again
+h.Ticks = [-0.1 -0.05 0.0 0.05 0.1];
+
 
 ylabel(h, 'ssha [m]', 'Rotation', 0);
 h.Label.Position(2)=h.Label.Position(2)+0.75;
@@ -190,5 +193,5 @@ h.Label.Position(1)=h.Label.Position(1)-3; %x-direction
 
 grid off
 
-exportgraphics(f,'fig07.pdf','Resolution', 300)
-print('fig07','-dpng','-r450')
+exportgraphics(f,'fig07_reviewerII.pdf','Resolution', 300)
+print('fig07_reviewerII','-dpng','-r450')
