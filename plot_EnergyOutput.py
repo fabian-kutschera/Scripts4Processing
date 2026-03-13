@@ -30,10 +30,12 @@ parser.add_argument("--xlabel", default="Time [s]", type=str, help="Choose xlabe
 parser.add_argument("--ylabel", default="", type=str, help="Choose ylabel")
 parser.add_argument("--dpi", default=300, type=int, help="Dots per Inch")
 parser.add_argument("-o", "--Output", type=str, required=False, metavar=("variable"), default="energy_output.png",
-                    help='Name of the output file')
+                    help="Name of the output file")
 
 parser.add_argument("--legacy", action="store_true", 
                     help="Allows to use energy output format for SeisSol older than Jan 31, 2023 (i.e., versions preceding commits c951a40 and 1150540)") 
+parser.add_argument("--plicka", action="store_true", 
+                    help="Plots moment rate of Plicka et al. (2022)") 
 args = parser.parse_args()
 
 ### search through wildcards
@@ -102,9 +104,18 @@ for i in range(0,len(files)):
             ylabel = "Energy [J]"
         else:
             ylabel = args.ylabel
-        
+
+    if args.plicka:
+        file = "/Users/fkutschera/Documents/GitHub/Samos_paper/MomentRates/data/plicka_Samosmomentrate.dat"
+        if os.path.isfile(file):
+            plicka = pd.read_csv(file,names=["Time", "MR"], header=None, sep="\s+")
+            plt.plot(plicka.Time, plicka.MR, color="#F95700FF", label="Plicka et al. (2022)")
+        else:
+            print("Moment rate file of Plicka et al. (2022) not found.")
+
     plt.xlabel(args.xlabel)
     plt.ylabel(ylabel)  
+    plt.grid(c='0.95')
 
     plt.legend()
         
